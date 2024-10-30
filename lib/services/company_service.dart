@@ -6,6 +6,12 @@ class CompanyService{
   getAllCompanies() async {
     try {
       var response = await http.get(Uri.parse(baseUrl+'company'));
+
+      if(response.statusCode == 200){
+        var data = response.body;
+      }else{
+        throw Exception("Error occured with status code ${response.statusCode} and the message is ${response.body}");
+      }
     } catch (e) {
       print("Error occured: ${e}");
     }

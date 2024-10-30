@@ -18,7 +18,9 @@ class CompanyService{
 
         for (var company in jsonData){
           Company newCompany = Company.fromJson(company);
+          allCompanies.add(newCompany);
         }
+        return allCompanies;
       }else{
         throw Exception("Error occured with status code ${response.statusCode} and the message is ${response.body}");
       }

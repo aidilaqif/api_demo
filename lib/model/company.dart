@@ -23,4 +23,16 @@ class Company{
     companyNumber = json['phone'];
     companyAddress = json['address'];
   }
+
+  Map<String, dynamic> toJson(){
+    Map<String, dynamic> data = {};
+
+    data['id'] = id;
+    data['logo'] = companyLogo;
+    data['name'] = companyName;
+    data['phone'] = companyNumber;
+    data['address'] = companyAddress;
+
+    return data;
+  }
 }

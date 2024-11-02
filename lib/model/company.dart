@@ -1,7 +1,6 @@
 // import 'package:flutter/material.dart';
 
-class Company{
-
+class Company {
   int? id;
   String? companyLogo;
   String? companyName;
@@ -9,14 +8,14 @@ class Company{
   String? companyAddress;
 
   Company({
-    required this.id,
+    this.id,
     required this.companyLogo,
     required this.companyName,
     required this.companyNumber,
     required this.companyAddress,
   });
 
-  Company.fromJson(Map<String, dynamic> json){
+  Company.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     companyLogo = json['logo'];
     companyName = json['name'];
@@ -24,10 +23,12 @@ class Company{
     companyAddress = json['address'];
   }
 
-  Map<String, dynamic> toJson(){
+  Map<String, dynamic> toJson() {
     Map<String, dynamic> data = {};
 
-    data['id'] = id;
+    if (id != null) {
+      data['id'] = id;
+    }
     data['logo'] = companyLogo;
     data['name'] = companyName;
     data['phone'] = companyNumber;
